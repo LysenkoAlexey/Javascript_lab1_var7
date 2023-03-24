@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language = "JavaScript">
+	let numberOf3;
+    let n = prompt('Напишите натуральное число для проверки');
+	if (isNaN(parseFloat(n)) || !isFinite(n) || (n <= 0) || !(Number.isInteger(Number(n)))){
+    alert('Ошибочное число:'+n);
+} else {
+	let nBonus = Number(n);
+	let sum = 0;
+	let html = '<p>n = ' + n + ' = ';
+	let n2, n3, n4;
+	n2 = Math.floor(Math.sqrt(nBonus));
+	n2 = n2 ** 2;
+	nBonus = nBonus - n2;
+	html += n2 + ' + ';
+	n3 = Math.floor(Math.sqrt(nBonus));
+	n3 = n3 ** 2;
+	nBonus = nBonus - n3;
+	html += n3 + ' + ';
+	n4 = Math.floor(Math.sqrt(nBonus));
+	n4 = n4 ** 2;
+	nBonus = nBonus - n4;
+	html += n4;
+	sum = n2 + n3 + n4;
+	if (n != sum) {
+		document.write('<p>Число '+n+' нельзя представить в виде суммы 3 полных квадратов</p>');
+	} else {
+	html += '</p>';
+	document.write(html);
+	}
+	}
+</script>
+<title>
+1
+</title>
+</head>
+<body>
+</body>
+</html>

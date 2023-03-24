@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language = "JavaScript">
+let n = prompt('2 < n < 15');
+	if (isNaN(parseFloat(n)) || !isFinite(n) || (n <= 2) || (n >= 15) || !(Number.isInteger(Number(n)))){
+    alert('Ошибочное число:'+n);
+} else {
+	let html = '';
+	for (let i = 1; i <= n; i++) {
+		html += '<hr width="'+(100 / i)+'%">';
+	}
+	
+	html += '<table align = "center" border = 2>';
+	let counter = 0;
+	for (let i = 1; i <= n; i++) {
+		html += '<tr>';
+		for (let j = 1; j <= n; j++) {
+			html += '<td';
+			if (j >= i) {
+				counter++;
+				html += ' bgcolor = "grey">'+counter;
+			} else { html += '>'; }
+			html += '</td>';
+		}
+		html += '</tr>';
+	}
+	html += '</table>';
+	
+	for (let i = n; i >= 1; i--) {
+		html += '<hr width="'+(100 / i)+'%">';
+	}
+	document.write(html);
+}
+</script>
+<title>
+2
+</title>
+</head>
+<body>
+</body>
+</html>
